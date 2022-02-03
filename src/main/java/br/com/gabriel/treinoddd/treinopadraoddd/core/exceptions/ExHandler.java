@@ -1,4 +1,4 @@
-package br.com.gabriel.treinoddd.treinopadraoddd.exceptions;
+package br.com.gabriel.treinoddd.treinopadraoddd.core.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

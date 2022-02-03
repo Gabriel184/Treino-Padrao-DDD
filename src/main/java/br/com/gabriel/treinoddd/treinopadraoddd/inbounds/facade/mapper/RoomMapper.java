@@ -1,7 +1,7 @@
-package br.com.gabriel.treinoddd.treinopadraoddd.facade.mapper;
+package br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.mapper;
 
-import br.com.gabriel.treinoddd.treinopadraoddd.domain.entities.Room;
-import br.com.gabriel.treinoddd.treinopadraoddd.facade.dto.RoomDTO;
+import br.com.gabriel.treinoddd.treinopadraoddd.core.entities.Room;
+import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.RoomDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

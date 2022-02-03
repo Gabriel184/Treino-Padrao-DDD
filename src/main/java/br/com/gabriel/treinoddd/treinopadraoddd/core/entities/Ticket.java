@@ -1,4 +1,4 @@
-package br.com.gabriel.treinoddd.treinopadraoddd.domain.entities;
+package br.com.gabriel.treinoddd.treinopadraoddd.core.entities;
 
 import javax.persistence.*;
 import java.util.Objects;

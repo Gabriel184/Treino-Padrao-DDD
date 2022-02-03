@@ -1,7 +1,7 @@
-package br.com.gabriel.treinoddd.treinopadraoddd.facade.mapper;
+package br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.mapper;
 
-import br.com.gabriel.treinoddd.treinopadraoddd.domain.entities.Ticket;
-import br.com.gabriel.treinoddd.treinopadraoddd.facade.dto.TicketDTO;
+import br.com.gabriel.treinoddd.treinopadraoddd.core.entities.Ticket;
+import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.TicketDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

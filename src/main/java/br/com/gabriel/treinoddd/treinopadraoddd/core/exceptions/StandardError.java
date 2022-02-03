@@ -1,4 +1,4 @@
-package br.com.gabriel.treinoddd.treinopadraoddd.exceptions;
+package br.com.gabriel.treinoddd.treinopadraoddd.core.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

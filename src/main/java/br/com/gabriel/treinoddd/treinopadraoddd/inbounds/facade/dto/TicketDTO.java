@@ -1,4 +1,4 @@
-package br.com.gabriel.treinoddd.treinopadraoddd.facade.dto;
+package br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
