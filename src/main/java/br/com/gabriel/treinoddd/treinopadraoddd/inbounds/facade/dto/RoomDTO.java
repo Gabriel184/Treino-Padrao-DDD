@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class RoomDTO extends DomainEntityDTO{
+public class RoomDTO extends DomainEntityDTO {
     private String name;
     private Integer number;
     private Integer viwersLimit;

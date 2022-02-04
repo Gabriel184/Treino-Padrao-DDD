@@ -3,11 +3,12 @@ package br.com.gabriel.treinoddd.treinopadraoddd.core.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "PERSON")
-public class Person extends DomainEntity{
+public class Person extends DomainEntity implements Serializable {
 
     @Column(name = "prn_name")
     private String name;

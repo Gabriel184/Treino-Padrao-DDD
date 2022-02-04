@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class TicketDTO extends DomainEntityDTO{
+public class TicketDTO extends DomainEntityDTO {
     private PersonDTO owner;
     private Double value;
     private MovieDTO movie;

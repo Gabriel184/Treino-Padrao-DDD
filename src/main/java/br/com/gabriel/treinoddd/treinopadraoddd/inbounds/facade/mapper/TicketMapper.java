@@ -11,6 +11,6 @@ public interface TicketMapper {
     TicketMapper INSTANCE = Mappers.getMapper(TicketMapper.class);
 
     TicketDTO convertToDto(Ticket ticket);
-    TicketMapper convertToUser(TicketDTO ticketDTO);
+    Ticket convertToTicket(TicketDTO ticketDTO);
 
 }

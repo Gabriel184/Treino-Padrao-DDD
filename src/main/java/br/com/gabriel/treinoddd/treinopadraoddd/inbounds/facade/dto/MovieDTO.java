@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class MovieDTO extends DomainEntityDTO{
+public class MovieDTO extends DomainEntityDTO {
 
     private String name;
     private Integer duration;

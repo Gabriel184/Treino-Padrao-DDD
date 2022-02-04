@@ -1,15 +1,14 @@
 package br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Builder
-public class PersonDTO extends DomainEntityDTO{
+public class PersonDTO extends DomainEntityDTO {
+    private Long id;
     private String name;
     private Integer age;
 }
