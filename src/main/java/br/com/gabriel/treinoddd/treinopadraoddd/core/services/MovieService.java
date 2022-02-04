@@ -40,7 +40,7 @@ public class MovieService implements IMovieService {
 
     @Override
     public List<DomainEntity> findAll() {
-        return new ArrayList<DomainEntity>(movieRepository.findAll());
+        return new ArrayList<>(movieRepository.findAll());
     }
 
     @Override

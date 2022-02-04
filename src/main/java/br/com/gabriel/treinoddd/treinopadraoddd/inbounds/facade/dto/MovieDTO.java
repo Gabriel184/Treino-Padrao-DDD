@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class MovieDTO extends DomainEntityDTO {
 
+    private Long id;
     private String name;
     private Integer duration;
 

@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class RoomDTO extends DomainEntityDTO {
+    private Long id;
     private String name;
     private Integer number;
     private Integer viwersLimit;
-
 }
