@@ -3,8 +3,6 @@ package br.com.gabriel.treinoddd.treinopadraoddd.core.services;
 import br.com.gabriel.treinoddd.treinopadraoddd.core.entities.DomainEntity;
 import br.com.gabriel.treinoddd.treinopadraoddd.core.entities.Person;
 import br.com.gabriel.treinoddd.treinopadraoddd.core.repositories.PersonRepository;
-import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.DomainEntityDTO;
-import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.PersonDTO;
 import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.mapper.PersonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,10 +23,10 @@ public class PersonService implements IPersonService {
     }
 
     @Override
-    public DomainEntityDTO save(DomainEntityDTO entity) {
+    public DomainEntity save(DomainEntity entity) {
         try {
-            Person person = personMapper.convertToPerson((PersonDTO) entity);
-            return personMapper.convertToDto(personRepository.save(person));
+            Person person = (Person) entity;
+            return personRepository.save(person);
         }
         catch (RuntimeException e){
             e.printStackTrace();
@@ -37,31 +35,26 @@ public class PersonService implements IPersonService {
     }
 
     @Override
-    public DomainEntityDTO update(Long id, DomainEntityDTO entityDTO) {
-        Person person = personMapper.convertToPerson((PersonDTO) entityDTO);
-        person.setId(personMapper.convertToPerson((PersonDTO) findById(id)).getId());
-        return personMapper.convertToDto(personRepository.saveAndFlush(person));
+    public DomainEntity update(Long id, DomainEntity entity) {
+        Person person = (Person) entity;
+        person.setId(findById(id).getId());
+        return personRepository.saveAndFlush(person);
     }
 
     @Override
-    public DomainEntityDTO findById(Long id) {
-        return personMapper.convertToDto(
-                personRepository.findById(id).orElseThrow(
-                        () -> new RuntimeException("Tratar essa exceçao corretamente")
-                )
+    public DomainEntity findById(Long id) {
+        return personRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Tratar essa exceçao corretamente")
         );//TODO - Colocar uma exceçao correta
     }
 
     @Override
-    public List<DomainEntityDTO> findAll() {
-        List<? extends DomainEntity> listOfPeople = personRepository.findAll();
-        List<DomainEntityDTO> listOfDtoPeople = new ArrayList<>();
-        listOfPeople.forEach(e -> listOfDtoPeople.add(personMapper.convertToDto((Person) e)));
-        return listOfDtoPeople;
+    public List<DomainEntity> findAll() {
+        return new ArrayList<>(personRepository.findAll());
     }
 
     @Override
-    public DomainEntityDTO delete(Long id) {
+    public DomainEntity delete(Long id) {
         try {
             personRepository.deleteById(id);
         }

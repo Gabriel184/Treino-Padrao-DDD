@@ -1,9 +1,11 @@
 package br.com.gabriel.treinoddd.treinopadraoddd.inbounds.controller;
 
+import br.com.gabriel.treinoddd.treinopadraoddd.core.entities.Person;
 import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.IPersonFacade;
 import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.DomainEntityDTO;
 import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.PersonDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +40,6 @@ public class PersonController {
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<PersonDTO> deletePerson(@PathVariable Long id){
-        personFacade.delete(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.status(HttpStatus.OK).body((PersonDTO) personFacade.delete(id));
     }
 }
