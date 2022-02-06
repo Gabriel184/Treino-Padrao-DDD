@@ -1,6 +1,6 @@
 package br.com.gabriel.treinoddd.treinopadraoddd.inbounds.controller;
 
-import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.IRoomFacade;
+import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.ITicketFacade;
 import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.DomainEntityDTO;
 import br.com.gabriel.treinoddd.treinopadraoddd.inbounds.facade.dto.TicketDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ import java.util.List;
 @RequestMapping(value = "/ticket")
 public class TicketController {
 
-    private final IRoomFacade ticketFacade;
+    private final ITicketFacade ticketFacade;
 
     @Autowired
-    public TicketController(IRoomFacade ticketFacade) {
+    public TicketController(ITicketFacade ticketFacade) {
         this.ticketFacade = ticketFacade;
     }
 
@@ -36,7 +36,7 @@ public class TicketController {
         return ResponseEntity.status(HttpStatus.CREATED).body(ticketFacade.save(ticketDTO));
     }
 
-    @PutMapping
+    @PutMapping(value = "/{id}")
     public ResponseEntity<DomainEntityDTO> updateTicket(@PathVariable Long id, @RequestBody TicketDTO ticketDTO) {
         return ResponseEntity.ok().body(ticketFacade.update(id, ticketDTO));
     }

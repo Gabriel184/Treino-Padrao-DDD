@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import javax.servlet.http.HttpServletRequest;
 import java.time.Instant;
 
-@ControllerAdvice
+/*@ControllerAdvice
 public class ExHandler {
 
     @ExceptionHandler(Exception.class)
@@ -19,4 +19,4 @@ public class ExHandler {
         return ResponseEntity.status(status).body(err);
     }
 
-}
+}*/

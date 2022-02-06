@@ -27,7 +27,9 @@ public class TicketService implements ITicketService{
 
     @Override
     public DomainEntity update(Long id, DomainEntity entity) {
-        return null;
+        Ticket ticket = (Ticket) entity;
+        ticket.setId(findById(id).getId());
+        return ticketRepository.saveAndFlush(ticket);
     }
 
     @Override
